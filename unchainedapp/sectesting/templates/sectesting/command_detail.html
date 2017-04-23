@@ -1,0 +1,26 @@
+{% extends 'sectesting/base.html' %}
+
+    {% block content %}
+    <div class=titulazo3>
+            Detalles del comando
+    </div>
+    <div>
+        <div class="boxpost">
+            <h2><a href="#">{{tplain.titulo}}</a> </h2>
+            <h4><p>
+            Comando: {{ cmd.comando_base.com_base }} {{ cmd.host }} </br>
+            Hora de ejecución: {{ cmd.hora_exec }}  </br>
+            Hora de finalización: {{ cmd.hora_fin }}  </br>
+            Estado: {{cmd.estado}}</br>
+            Salida del comando:</br>
+            {{ tplain.salida_comando|linebreaks }}</br>
+            {% if tplain.salidaerr_comando %}
+            Salida Error: </br> {{ tplain.salidaerr_comando|linebreaks }}</br>
+            {% endif %}
+            {% if tplain.observaciones %}
+            Observaciones: </br>{{ tplain.observaciones|linebreaks }}
+            {% endif %}
+            </p></h4>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+            Listado de Clientes
+</div>
+    {% for cliente in clientes %}
+        <div>
+            <div class="boxpost">
+            <h2><a href="{% url 'sectesting.views.cliente_detail' pk=cliente.pk %}">{{ cliente.empresa }}</a></h2>
+            <h4>
+            <p>Nombre: {{ cliente.nombre }} &nbsp {{ cliente.apellidos }}</p>
+            <p>Fecha y hora de alta: {{cliente.fecha_alta}}</p>
+            </h4>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

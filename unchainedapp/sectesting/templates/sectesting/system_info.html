@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+            Informacion del sistema
+</div>
+<div class=principal>
+<h2>Informacion basica:</h2>
+<p>
+    Tipo: {{syst.tipo}}</br>
+    Kernel: {{syst.kernel}}</br>
+    Nombre: {{syst.nombre}}</br>
+</p>
+</div>
+&nbsp
+<div class=principal>
+<h2>Sobre Python:</h2>
+<p>
+    Versión: {{pyt.version}}</br>
+    Implementación: {{pyt.implementacion}}</br>
+    Compilador: {{pyt.compilador}}
+</p>
+</div>
+</br>
+<div class=principal>
+<h2>Carga del sistema</h2>
+<p>
+</p>
+</div>
+</br>
+<div class=principal>
+<h2>Memoria RAM</h2>
+<p>
+<b>Libre:</b> {{ mem.libre }} Mb de {{ mem.total }} Mb</br>
+<b>Caché:</b> {{ mem.cache }}
+</p>
+</div>
+</br>
+<div class=principal>
+<h2>Procesos</h2>
+<p style="text-align:left;">
+{% for p in pro %}
+Pid: {{ p.pid }} Nombre: {{ p.nombre }}</br>
+{% endfor %}
+</p>
+</div>
+{% endblock content %}

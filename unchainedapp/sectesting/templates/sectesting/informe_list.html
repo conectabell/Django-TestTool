@@ -1,0 +1,18 @@
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+            Listado de Informes
+</div>
+<div><a href= "{% url 'sectesting.views.escribir_informe' %}" class="myButton"> Escribir Nuevo Informe</a>
+    {% for informe in informes %}
+            <div class="boxpost">
+            <h2><a href="{% url 'sectesting.views.informe_detail' pk=informe.pk %}">{{ informe.titulo }}</a></h2>
+            <h4>
+            <p>Título: {{ informe.titulo }}</br>
+            Fecha y hora de alta: {{informe.fecha}}</br>
+            Empresa: {{ informe.test.cliente.empresa }}</p>
+            </h4>
+            </div>
+    {% endfor %}
+</div>
+{% endblock content %}

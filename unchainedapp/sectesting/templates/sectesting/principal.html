@@ -1,0 +1,19 @@
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+            Pagina principal
+</div>
+<div class=principal>
+<h2>Info del sistema:</h2>
+<p>
+    Tipo: {{syst.tipo}}</br>
+    Kernel: {{syst.kernel}}</br>
+    Nombre: {{syst.nombre}}</br>
+</p>
+</div>
+&nbsp
+</br>
+<div class=principal>
+<a href="{% url 'sectesting.views.systemInfo' %}"> <h2>Más Info</h2></a>
+</div>
+{% endblock content %}

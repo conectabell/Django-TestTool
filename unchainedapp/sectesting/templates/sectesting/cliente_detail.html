@@ -1,0 +1,18 @@
+{% extends 'sectesting/base.html' %}
+
+    {% block content %}
+    <div class=titulazo3>
+            Detalles del cliente
+    </div>
+    <div>
+        <div class="boxpost">
+            <h2>{{ cln.empresa }} NIF: {{ cln.nif }}</h2>
+            <h4>Fecha de alta: {{ cln.fecha_alta }}<br>
+            Nombre: {{cln.nombre}}<br>
+            Apellidos: {{cln.apellidos}}<br>
+            Sitio web: {{cln.web1}}<br>
+            Observaciones:
+            {{ cln.observaciones|linebreaks }}</h4>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<head>
+<title>SecTesting - muyBeta Version</title>
+<link rel="stylesheet" href="{% static 'css/basic.css' %}">
+</head>
+<body>
+<div class=titulazobg>
+    <div class=titulazo>
+        SecTesting &nbsp Beta
+    </div>
+    <div class=titulazo2>
+    Django Security Testing Shell Commands Framework
+    </div>
+</div>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href="{% url 'sectesting.views.principal' %}"><span>Principal</span></a></li>
+   <li><a href="{% url 'sectesting.views.clientes_list' %}"><span>Perfiles</span></a></li>
+   <li><a href="{% url 'sectesting.views.test_list' %}"><span>Tests Realizados</span></a></li>
+   <li><a href="{% url 'sectesting.views.command_list' %}"><span>Comandos Guardados</span></a></li>
+   <li><a href="{% url 'sectesting.views.command_list' %}"><span>Python Tools</span></a></li>
+   <li><a href="{% url 'pruebas1.views.post_list' %}"><span>Bitacora</span></a></li>
+   <li class='last'><a href="{% url 'sectesting.views.informe_list' %}"><span>Informes</span></a></li>
+</ul>
+</div>
+</br>
+<div>
+{% block content %}
+{% endblock %}
+</div>
+<div class=footerpers>
+Sitio creado con Django por Antonio Coronado
+</div>
+</body>

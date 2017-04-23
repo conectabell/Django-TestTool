@@ -1,0 +1,17 @@
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+            Listado de Test
+            </div>
+    {% for test in tests %}
+        <div>
+            <div class="boxpost">
+            <h2><a href="{% url 'sectesting.views.test_detail' pk=test.pk %}">{{ test.cliente }}</a></h2>
+            <h4><p>Fecha: {{test.fecha_alta}}</p>
+            <p>Tipo de test: {{ test.tipo }} </p>
+            {{ test.observaciones|linebreaks }}
+            </h4>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

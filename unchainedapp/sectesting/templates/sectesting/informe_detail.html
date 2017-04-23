@@ -1,0 +1,32 @@
+{% extends 'sectesting/base.html' %}
+
+    {% block content %}
+    <div class=titulazo3>
+            Informe Detallado
+    </div>
+    <div>
+        <div class="boxpost">
+            <h2>{{ informe.titulo }}</h2>
+            <h4>
+            <p>Fecha: {{ informe.fecha }} realizado por {{ informe.test.author }}</p>
+            <p>Datos Del Cliente:</p>
+            <p>Empresa: {{ informe.test.cliente.empresa }}</p>
+            <p>Nif: {{ informe.test.cliente.nif }}</p>
+            <p>Nombre: {{ informe.test.cliente.nombre }}</p>
+            <p>Apellidos: {{ informe.test.cliente.apellidos }}</p>
+            <p>Presentación:</p>
+            {{ informe.presentacion|linebreaks }}
+            <p>Resumen Ejecutivo:</p>
+            {{ informe.resumen_ej|linebreaks }}
+            <p>Resumen Técnico:</p>
+            {{ informe.resumen|linebreaks }}
+            <p>Información de interés encontrada:</p>
+            {{ informe.info|linebreaks }}
+            <p>Vulnerabilidades encontradas:</p>
+            {{ informe.vulns|linebreaks }}
+            <p>Soluciones:</p>
+            {{ informe.soluciones|linebreaks }}
+            </p></h4>
+        </div>
+    </div>
+    {% endblock %}

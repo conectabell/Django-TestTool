@@ -1,0 +1,27 @@
+{% extends 'sectesting/base.html' %}
+
+    {% block content %}
+    <div class=titulazo3>
+            Detalles del test
+    </div>
+    <div>
+        <div class="boxpost">
+            <h2><a href="#">{{ tst.cliente }}</a> </h2>
+            <h4>Publicado: {{ tst.fecha_alta }} por {{tst.author}}<br>
+            {{tst.tipo}}<br>
+            {{ tst.observaciones|linebreaks }}</h4>
+        </div>
+    </div>
+        <div class=titulazo4>
+            Comandos lanzados
+        </div>
+        {% for cmd in cmds %}
+        <div>
+            <div class="boxpost">
+            <h2><a href="{% url 'sectesting.views.command_detail' pk=cmd.pk %}">{{ cmd.comando_base.com_base}}&nbsp{{cmd.host}}</a></h2>
+            <h4><p>{{ cmd.hora_exec}}<br>
+            Estado del comando: {{cmd.estado}}</p></h4>
+            </div>
+    {% endfor %}
+    </div>
+    {% endblock %}

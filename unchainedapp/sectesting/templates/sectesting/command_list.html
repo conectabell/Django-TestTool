@@ -1,0 +1,11 @@
+{% extends 'sectesting/base.html' %}
+{% block content %}
+<div class=titulazo3>
+    Listado de Comandos
+</div>
+    {% for comando in comandos %}
+        <div>
+            <center><h2><a href="{% url 'sectesting.views.lanz_com_predef' pk=comando.pk nom=comando.nombre %}" class=buttonlist title="{{comando.com_base}}" > - {{comando.nombre}} -  </a></h2></center>
+        </div>
+    {% endfor %}
+{% endblock content %}
